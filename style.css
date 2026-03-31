@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background image */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://dev-kumrekrishna.github.io/assets/images/Krishna-Anime-Avatar.png") center/cover no-repeat;
+  opacity: 1; /* 🔥 25% opacity */
+  z-index: -2;
+}
+
+/* Dark overlay for readability */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(#08fb8f, #009794);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* Cards */
+.goal {
+  margin: 15px;
+  padding: 15px;
+  border-radius: 20px;
+  border: 2px solid rgba(0,0,0,0.4);
+  background: rgba(255,255,255,0.3);
+  position: relative;
+  
+}
+
+/* Status dot */
+.status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+
+.red { background: red; }
+.green { background: #00ff88; }
+
+/* Title */
+.goal h3 {
+  margin: 0;
+  font-weight: 1000;
+  color: #021a16;
+}
+h1 {
+  font-weight: 700;
+}
+
+.time {
+  font-weight: 500;
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+  color: #aaa;
+}
+.goal:not(.done) h3 {
+  text-shadow: 0 0 5px rgba(8, 251, 143, 0.3);
+}
+/* Time */
+.time {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Floating button */
+.fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #00ff88;
+  color: black;
+  font-size: 30px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 20px #00ff88;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-box {
+  width: 85%;
+  max-width: 320px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.modal-box input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+.actions button {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Cancel */
+.actions button:first-child {
+  background: transparent;
+  border: 1px solid #aaa;
+  color: #ccc;
+}
+
+.actions button:first-child:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Add */
+.actions button:last-child {
+  background: #00ff88;
+  color: black;
+}
+
+.actions button:last-child:hover {
+  box-shadow: 0 0 10px #00ff88;
+  transform: scale(1.05);
+}
+
+.goal button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* ✔ icon */
+.goal button:first-of-type svg {
+  stroke: #08fb8f; /* tera green */
+}
+
+/* ❌ icon */
+.goal button:last-of-type svg {
+  stroke: red;
+}
+.goal button svg {
+  width: 22px;
+  height: 22px;
+}
+
+.goal button:hover {
+  transform: scale(1.2);
+}

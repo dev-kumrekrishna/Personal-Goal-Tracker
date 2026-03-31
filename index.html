@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Goal UI</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#08fb8f">
+
+<link rel="icon" href="https://dev-kumrekrishna.github.io/assets/logos/mine-portfolio.png">
+<link rel="apple-touch-icon" href="https://dev-kumrekrishna.github.io/assets/logos/mine-portfolio.png">
+</head>
+<body>
+
+<h1 style=" margin-left:20px; ">Goals</h1>
+
+<div id="list"></div>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+    
+    <h2>Add Goal</h2>
+
+    <input type="text" id="goalInput" placeholder="Enter goal">
+
+    <input type="time" id="timeInput">
+
+    <div class="actions">
+      <button onclick="closeModal()">Cancel</button>
+      <button onclick="saveGoal()">Add</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Floating + Button -->
+<div class="fab" onclick="openPrompt()">+</div>
+
+<div id="customAlert" class="modal hidden">
+  <div class="modal-box">
+    <p id="alertText"></p>
+    <button onclick="closeAlert()">OK</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(reg => console.log("SW registered:", reg))
+      .catch(err => console.log("SW error:", err));
+  });
+}
+</script>
+</body>
+</html>
