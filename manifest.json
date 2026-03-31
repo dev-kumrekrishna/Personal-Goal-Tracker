@@ -1,7 +1,7 @@
 {
   "name": "Goal Tracker",
   "short_name": "Goal Tracker",
-  "start_url": "./index.html",
+  "start_url": "/Personal-Goal-Tracker/index.html",
   "display": "standalone",
   "background_color": "#030406",
   "theme_color": "#08fb8f",
